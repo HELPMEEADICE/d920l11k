@@ -36,7 +36,7 @@ POSIX_UEFI_PATH=<path to posix-uefi> ./buildaa64.sh
 
 ## References
 
-- Thanks d920s10 version: https://github.com/dixyes/d920s10-acpi-fix
+- Thanks d920s10 version: https://github.com/dixyes/d920s10
 - Based on firmware: BIOS_Hi1620_V200R002C20B017 for board D920L11K-2251K
 - SoC: HiSilicon Hi1620 (Kunpeng 920 / Taishan cores)
 - EC chip: ITE IT83201
