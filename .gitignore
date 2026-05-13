@@ -1,0 +1,6 @@
+*.o
+*.efi
+*.dll
+*.exe
+*.so
+*.bin
