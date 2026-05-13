@@ -232,7 +232,11 @@ int set_fhd(efi_gop_t *gop) {
     uint64_t max_pixels = 0;
     uintn_t isiz = sizeof(efi_gop_mode_info_t);
     efi_gop_mode_info_t *info = NULL;
-    for (uintn_t try_mode = gop->Mode->MaxMode - 1; try_mode >= 0; try_mode--) {
+    if (gop->Mode->MaxMode == 0) {
+        printf("no available video modes\n");
+        return 1;
+    }
+    for (intn_t try_mode = gop->Mode->MaxMode - 1; try_mode >= 0; try_mode--) {
         ret = gop->QueryMode(gop, try_mode, &isiz, &info);
         if (EFI_ERROR(ret) || info->PixelFormat > PixelBitMask) {
             // unsupported
